@@ -76,36 +76,47 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9">
-              <h2>Contact Form</h2>   
+              <h2>Introduce tus datos</h2>   
 
             <!-- Start Contact Form -->
             <form role="form" id="contactForm" class="contact-form" data-toggle="validator" class="shake">
               <div class="form-group">
                 <div class="controls">
-                  <input type="text" id="name" class="form-control" placeholder="Name" required data-error="Please enter your name">
+                  <input type="text" id="name" class="form-control" placeholder="Nombre" required data-error="Por favor introduce tu nombre">
                   <div class="help-block with-errors"></div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="controls">
-                  <input type="email" class="email form-control" id="email" placeholder="Email" required data-error="Please enter your email">
+                  <input type="text" id="lastname" class="form-control" placeholder="Apellido" required data-error="Por favor introduce tu apellido">
                   <div class="help-block with-errors"></div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="controls">
-                  <input type="text" id="msg_subject" class="form-control" placeholder="Subject" required data-error="Please enter your message subject">
+                  <input type="email" class="email form-control" id="email" placeholder="Email" required data-error="Por favor introduce tu email">
                   <div class="help-block with-errors"></div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="controls">
-                  <textarea id="message" rows="7" placeholder="Massage" class="form-control" required data-error="Write your message"></textarea>
+                  <label for="sel1">Estoy buscando:</label>
+                  <select class="form-control" id="sel1"  required data-error="Observaciones">
+                    <option>Ayuda</option>
+                    <option>Prestar ayuda</option>
+                  </select> 
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls">
+                  <textarea id="message" rows="7" placeholder="Massage" class="form-control" required data-error="Escribe tus observaciones"></textarea>
                   <div class="help-block with-errors"></div>
                 </div>  
               </div>
 
-              <button type="submit" id="submit" class="btn btn-success"></i> Send Message</button>
+              <button type="submit" id="submit" class="btn btn-success"></i> Enviar</button>
+              <button type="clear" id="clear" class="btn btn-warning"></i> Limpiar</button>
               <div id="msgSubmit" class="h3 text-center hidden"></div> 
               <div class="clearfix"></div>   
 
@@ -114,13 +125,12 @@
 
             </div>
             <div class="col-md-3">
-              <h2 class="big-title">Contact Info</h2>   
+              <h2 class="big-title">Información de Contacto</h2>   
               <div class="information">              
                 <div class="contact-datails">
-                  <p> 12 Tottenham Road, London, England.</p>
-                  <p> +880 123 456 789 </p>
-                  <p> hello@graygrids.com </p>
-                  <p> Sun-Sat (9am-5pm)</p>
+                  <p> Gascón 62, Almagro, Buenos Aires, Argentina.</p>
+                  <p> +54 9 11 3255-6087 </p>
+                  <p> dedd712@gmail.com </p>
                 </div>
               </div>
             </div>
