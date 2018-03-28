@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Todos Unidos - Ayudando a ayudar</title>
+    <title>Ayúdanos a ayudar</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,9 @@
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Fav Icon -->
+    <link rel="icon" href="favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,8 +46,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>Todos Unidos - Ayudando a Ayudar</h1>
-                        <h3>De Venezolanos para venezolanos</h3>
+                        <h1>Ayúdanos a Ayudar</h1>
+                        <img src="img/AaA.jpg" class="img-fluid" alt="Responsive image">
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
@@ -54,7 +57,7 @@
                                 <a href="#" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
                             </li>
                             <li>
-                                <a href="https://www.facebook.com/groups/12572665761" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                                <a href="https://www.facebook.com/groups/1658225994219613/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                             </li>
                             <li>
                                 <a href="https://chat.whatsapp.com/8k0dgR4pHfGKs1KrBYv0uS" class="btn btn-default btn-lg"><i class="fa fa-whatsapp fa-fw"></i> <span class="network-name">WhatsApp</span></a>

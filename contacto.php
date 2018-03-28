@@ -59,9 +59,11 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Te puedes comunicar con:</h2>
                     <ul>
-                        <li><p class="lead">Lau: +54 9 11 3255-6087</p></li>
-                        <li><p class="lead">Solsiré: +54 9 11 7162-1875</p></li>
-                        <li><p class="lead">Vero: +54 9 11 3562-1073</p></li>
+                        <li><p class="lead">Laurys: +54 9 11 3255-6087</p></li>
+                        <li><p class="lead">Zaraid: +54 9 11 7000-7451</p></li>
+                        <li><p class="lead">Daniel: +54 9 11 2388-2368</p></li>
+                        <li><p class="lead">Adolfo: +54 9 11 5814-1953</p></li>
+                        <li><p class="lead">Milagros: +54 9 11 2771-8925</p></li>
                     </ul>
                     
                 </div>

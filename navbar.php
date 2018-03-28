@@ -9,13 +9,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="index.php">Todos Unidos - Ayudando a Ayudar</a><span class="flag-icon flag-icon-gr"></span>
+                <a class="navbar-brand topnav" href="index.php">Ayudanos a Ayudar</a><span class="flag-icon flag-icon-gr"></span>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">Acerca de</a>
+                        <a href="eventos.php">Eventos</a>
                     </li>
                     <li>
                         <a href="registro.php">Registro</a>
