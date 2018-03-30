@@ -8,3 +8,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Main JS  -->      
+    <script src="js/form-validator.min.js"></script>  
+    <script src="js/contact-form-script.js"></script>
+
+</body>
+
+</html>

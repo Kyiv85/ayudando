@@ -2,6 +2,13 @@
     <?php include("includes/header.php"); ?>
     <?php include("includes/navbar.php"); ?>
 
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
 
     <!-- Header -->
     <a name="about"></a>
@@ -28,13 +35,15 @@
           <div class="col-lg-12 col-sm-12">
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
-            <h2 class="section-heading">Déjanos tus datos</h2>
-            <p class="lead">Indicanos si puedes prestarnos ayuda o te podemos ayudar</p>
+            <h2 class="section-heading">Ponencia sobre búsqueda laboral</h2>
+            <p class="lead">Para el domingo 8 de abirl estaremos realizando un seminario sobre herramientas de bśuqueda laboral, de manera que sirva de apoyo a los compatriotas que aún no consigan trabajo y pueden aprender a manejarse de una manera más eficiente en Argentina a la hora de conseguir empleo. La misma estára siendo de 8am a 1pm.</p>
+            <p class="lead">Vamos a estar llevando un registro y seleccionaremos un grupo de 30 personas entre distintos perfiles que puedan estar asistiendo a la ponencia. Si estás interesado en asitir llena el siguiente formulario y nos pondremos en contacto contigo.</p>
           </div>
+
           <div class="col-lg-12 col-sm-12">
             <hr class="section-heading-spacer">
               <div class="clearfix"></div>
-                         <!-- Start Content Section -->
+                <!-- Start Content Section -->
                 <section id="content">
                   <div class="container">
                     <div class="row">
@@ -110,7 +119,7 @@
     </div>
     <!-- /.content-section-a -->
 
-	
+    
     
     <?php  
         include("includes/footer.php");
