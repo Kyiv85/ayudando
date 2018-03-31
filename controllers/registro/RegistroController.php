@@ -1,6 +1,7 @@
 <?php
 //Clase para el registro de usuarios
 include("../../models/DBConnect.php");
+include("../../controllers/email/EmailMG.php");
 
 class RegistroController extends Conection {
 
@@ -39,20 +40,25 @@ class RegistroController extends Conection {
     //Guardar los datos
     $this->insertUsuario($mbd,$data);
     if($this->error){
-    	$mbd = null;
-      $exist = null;
 			return false;
 		}
 
 		//Enviar el mensaje al usuario y a la cuenta de ayudanos a ayudar
-		
+		$mail = EmailMG::sendEmail($data);
+		if(!($mail)){
+			$this->error = "El usuario se registró satisfactoriamente, pero hubo un error al enviar el correo de confirmación. Por favor contacta con el administrador";
+			return false;
+		}
+		$mbd->query('ROLLBACK');
 
 		//Se cierran las conexiones si todo está bien
-		$sth = null;
+		$mbd = null;
 		$exist = null;
 
 		return true;
 	}
+
+
 
 	/* 
 	* Verifica si ya existe un usuario en la BD

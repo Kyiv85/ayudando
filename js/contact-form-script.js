@@ -52,7 +52,8 @@ function submitForm(){
         usuDireccion: usuDireccion,
         usuTipo: usuTipo,
         usuProfesion: usuProfesion,
-        usuComentarios: usuComentarios
+        usuComentarios: usuComentarios,
+        reCaptcha: response
       },
       success: function (data) {
         formError();

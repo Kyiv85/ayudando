@@ -6,26 +6,21 @@ include("../../controllers/registro/RegistroController.php");
 if (isset($_POST["accion"]) && ($_POST["accion"] == "registrarUsuario")){
   $reg = new RegistroController();
   $datos = $_POST;
-  $resp = $reg->registrarUsuario($datos);
-
-  //Verificar la respuesta
-  if($resp){
-    echo "mamalo es tru";
+  //Valirdar el reCaptcha
+  if(($datos["reCaptcha"] == null) || ($datos["reCaptcha"] == "")){
+    echo "Valida el reCaptcha";
   }
   else{
-    echo $reg->error;
+    $resp = $reg->registrarUsuario($datos);
+
+    //Verificar la respuesta
+    if($resp){
+      echo "El registro se completó satisfactoriamente!";
+    }
+    else{
+      echo $reg->error;
+    }
   }
-  /*$comp = new Gastos();
-  $resp["gastos"] = $comp->getGastosCompraRelacion($_POST['comID']);
-  $resp["notasCredito"] = $comp->getNotasCreditoRelacionadas($_POST["comID"]);
-  
-  //Verificar si existen certificados de retención para la compra
-  $cert = CertificadosRetencion::getCertByCompra($_POST["comID"]);
-  if (count($cert)>0){
-    $resp["certificado"] = $cert;
-  }
-  echo json_encode($resp);
-  exit();*/
   exit();
 }
 else {
