@@ -1,13 +1,21 @@
 <?php
 //Página para responder requests AJAX para el registro de usuarios
-include("../controllers/registro/RegistroController.php");
-
-$reg = new RegistroController();
-
+include("../../controllers/registro/RegistroController.php");
 
 //Registrar el usuario
-if (isset($_POST["accion"]) && ($_POST["accion"] == "verPagosRelacionados")){
-  $comp = new Gastos();
+if (isset($_POST["accion"]) && ($_POST["accion"] == "registrarUsuario")){
+  $reg = new RegistroController();
+  $datos = $_POST;
+  $resp = $reg->registrarUsuario($datos);
+
+  //Verificar la respuesta
+  if($resp){
+    echo "mamalo es tru";
+  }
+  else{
+    echo $reg->error;
+  }
+  /*$comp = new Gastos();
   $resp["gastos"] = $comp->getGastosCompraRelacion($_POST['comID']);
   $resp["notasCredito"] = $comp->getNotasCreditoRelacionadas($_POST["comID"]);
   
@@ -17,6 +25,7 @@ if (isset($_POST["accion"]) && ($_POST["accion"] == "verPagosRelacionados")){
     $resp["certificado"] = $cert;
   }
   echo json_encode($resp);
+  exit();*/
   exit();
 }
 else {
