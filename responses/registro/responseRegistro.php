@@ -15,7 +15,7 @@ if (isset($_POST["accion"]) && ($_POST["accion"] == "registrarUsuario")){
 
     //Verificar la respuesta
     if($resp){
-      echo "El registro se completó satisfactoriamente!";
+      echo "success";
     }
     else{
       echo $reg->error;

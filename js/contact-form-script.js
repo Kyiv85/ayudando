@@ -56,17 +56,12 @@ function submitForm(){
         reCaptcha: response
       },
       success: function (data) {
-        formError();
-        submitMSG(false,data);
-
-        /*
-        if (text == "success"){
+        if (data == "success"){
           formSuccess();
         } else {
           formError();
-          submitMSG(false,text);
+          submitMSG(false,data);
         }
-        */
       },
       error: function(){
         formError();
