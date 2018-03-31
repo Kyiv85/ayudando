@@ -2,30 +2,19 @@
     <?php include("includes/header.php"); ?>
     <?php include("includes/navbar.php"); ?>
 
-    <style>
-      #map {
-        width: 100%;
-        height: 400px;
-        background-color: grey;
-      }
-    </style>
-
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="intro-message">
+                    <div class="intro-message" style="padding-top:5px;padding-bottom:5px;">
                         <h1>Eventos</h1>
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- /.container -->
-
     </div>
     <!-- /.intro-header -->
 

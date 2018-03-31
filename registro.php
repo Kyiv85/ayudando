@@ -1,7 +1,7 @@
     
     <?php include("includes/header.php"); ?>
     <?php include("includes/navbar.php"); ?>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- Header -->
     <a name="about"></a>
@@ -10,7 +10,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="intro-message">
+                    <<div class="intro-message" style="padding-top:5px;padding-bottom:5px;">
                         <h1>Registrate</h1>
                     </div>
                 </div>
@@ -45,37 +45,80 @@
                           <form role="form" id="contactForm" class="contact-form" data-toggle="validator" class="shake">
                             <div class="form-group">
                               <div class="controls">
-                                <input type="text" id="name" class="form-control" placeholder="Nombre" required data-error="Por favor introduce tu nombre">
+                                <input type="text" id="usuNombre" name="usuNombre" class="form-control" placeholder="Nombre" required data-error="Por favor introduce tu nombre">
                                 <div class="help-block with-errors"></div>
                               </div>
                             </div>
                             <div class="form-group">
                               <div class="controls">
-                                <input type="text" id="lastname" class="form-control" placeholder="Apellido" required data-error="Por favor introduce tu apellido">
+                                <input type="text" id="usuApellido" name="usuApellido" class="form-control" placeholder="Apellido" required data-error="Por favor introduce tu apellido">
                                 <div class="help-block with-errors"></div>
                               </div>
                             </div>
                             <div class="form-group">
                               <div class="controls">
-                                <input type="email" class="email form-control" id="email" placeholder="Email" required data-error="Por favor introduce tu email">
+                                <input type="email" class="email form-control" id="usuEmail" name="usuEmail" placeholder="Email" required data-error="Por favor introduce tu email">
                                 <div class="help-block with-errors"></div>
                               </div>
                             </div>
                             <div class="form-group">
                               <div class="controls">
-                                <label for="sel1">Estoy buscando:</label>
-                                <select class="form-control" id="sel1"  required data-error="Observaciones">
-                                  <option>Ayuda</option>
-                                  <option>Prestar ayuda</option>
+                                <label for="tipCod">Tipo de Documento:</label>
+                                <select class="form-control" id="tipCod" name="tipCod" required data-error="Por favor elige una opción">
+                                  <option value="1">DNI</option>
+                                  <option value="2">Cédula</option>
+                                  <option value="3">Pasaporte</option>
                                 </select> 
                                 <div class="help-block with-errors"></div>
                               </div>
                             </div>
                             <div class="form-group">
                               <div class="controls">
-                                <textarea id="message" rows="7" placeholder="Massage" class="form-control" required data-error="Escribe tus observaciones"></textarea>
+                                <input type="number" class="form-control" id="usuDocumento" name="usuDocumento" placeholder="Número de documento" required data-error="Por favor introduce tu número de documento">
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="controls">
+                                <label for="usuPais">País donde resides actualmente:</label>
+                                <select class="form-control" id="usuPais" name="usuPais" required data-error="Por favor elige una opción">
+                                  <option value="Venezuela">Venezuela</option>
+                                  <option value="Argentina">Argentina</option>
+                                  <option value="Otro">Otro</option>
+                                </select> 
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="controls">
+                                <textarea id="usuDireccion" name="usuDireccion" rows="3" placeholder="Escribe tu dirección actual" class="form-control" required data-error="Escribe tu dirección actual"></textarea>
                                 <div class="help-block with-errors"></div>
                               </div>  
+                            </div>
+                            <div class="form-group">
+                              <div class="controls">
+                                <label for="usuTipo">Estoy buscando:</label>
+                                <select class="form-control" id="usuTipo" name="usuTipo" required data-error="Por favor elige una opción">
+                                  <option value="N">Ayuda</option>
+                                  <option value="O">Prestar ayuda</option>
+                                  <option value="A">Ambos</option>
+                                </select> 
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="controls">
+                                <input type="text" id="usuProfesion" name="usuProfesion" class="form-control" placeholder="Profesión" required data-error="Por favor introduce tu profesión">
+                                <div class="help-block with-errors"></div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="controls">
+                                <textarea id="usuComentarios" name="usuComentarios" rows="7" placeholder="Escribe tus comentarios u observaciones" class="form-control"></textarea>
+                              </div>  
+                            </div>
+                            <div class="form-group">
+                              <div class="g-recaptcha" data-sitekey="6LeJAlAUAAAAALx_byIqLL5da-ZsXTXi3UL3gtZb"></div>
                             </div>
 
                             <button type="submit" id="submit" class="btn btn-success"></i> Enviar</button>
@@ -91,9 +134,8 @@
               <h2 class="big-title">Información de Contacto</h2>   
               <div class="information">              
                 <div class="contact-datails">
-                  <p> Gascón 62, Almagro, Buenos Aires, Argentina.</p>
-                  <p> +54 9 11 3255-6087 </p>
-                  <p> dedd712@gmail.com </p>
+                  <p>ayudanosayudarba@gmail.com</p>
+                  <p>Buenos Aires, Argentina</p>
                 </div>
               </div>
             </div>

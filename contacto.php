@@ -7,7 +7,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="intro-message">
+                    <div class="intro-message" style="padding-top:5px;padding-bottom:5px;">
                         <h1>Contacto</h1>
                     </div>
                 </div>

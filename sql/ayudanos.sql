@@ -162,3 +162,10 @@ ADD CONSTRAINT `fk_cod_usuario` FOREIGN KEY (`usuCod`) REFERENCES `ayuUsuarios` 
 CREATE USER 'ayudanos'@'localhost' IDENTIFIED BY 'M4dur0c0#03Tum4dr3';
 GRANT ALL PRIVILEGES ON ayudanos.* TO 'ayudanos'@'localhost';
 FLUSH PRIVILEGES;
+
+/*Número de documento del usuario*/
+ALTER TABLE `ayuUsuarios` ADD `usuDocumento` INT NOT NULL AFTER `tipCod`;
+
+/*Comentarios del usuario - Colocar en NULL*/
+ALTER TABLE `ayuUsuarios` ADD `usuComentarios` VARCHAR(150) NOT NULL AFTER `usuProfesion`;
+ALTER TABLE `ayuUsuarios` CHANGE `usuComentarios` `usuComentarios` VARCHAR(150) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;
