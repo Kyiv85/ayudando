@@ -49,7 +49,6 @@ class RegistroController extends Conection {
 			$this->error = "El usuario se registró satisfactoriamente, pero hubo un error al enviar el correo de confirmación. Por favor contacta con el administrador";
 			return false;
 		}
-		$mbd->query('ROLLBACK');
 
 		//Se cierran las conexiones si todo está bien
 		$mbd = null;

@@ -24,5 +24,5 @@ if (isset($_POST["accion"]) && ($_POST["accion"] == "registrarUsuario")){
   exit();
 }
 else {
-  header('Location:index.php');
+  header('Location:/../../index.php');
 }
