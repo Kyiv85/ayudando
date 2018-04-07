@@ -3,7 +3,8 @@ Proyecto solidario
 
 Crear el config.php.ini en models/config con los parámetros:
 
-//Archivo de configuración para la conexión con la base de datos
+
+        //Archivo de configuración para la conexión con la base de datos
         $host = HOST;
         $dbname = NOMBREDB;
         $dbuser = USUARIODB;
