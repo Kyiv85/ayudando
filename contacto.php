@@ -25,15 +25,15 @@
                 <div class="col-lg-12 col-sm-12">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Te puedes comunicar con:</h2>
+                    <h2 class="section-heading">Participamos en el proyecto:</h2>
                     <ul>
-                        <li><p class="lead">Laurys: +54 9 11 3255-6087</p></li>
-                        <li><p class="lead">Zaraid: +54 9 11 7000-7451</p></li>
-                        <li><p class="lead">Daniel: +54 9 11 2388-2368</p></li>
-                        <li><p class="lead">Adolfo: +54 9 11 5814-1953</p></li>
-                        <li><p class="lead">Milagros: +54 9 11 2771-8925</p></li>
+                        <li><p class="lead">Laurys</p></li>
+                        <li><p class="lead">Zaraid</p></li>
+                        <li><p class="lead">Daniel</p></li>
+                        <li><p class="lead">Adolfo</p></li>
+                        <li><p class="lead">Milagros</p></li>
                     </ul>
-                    
+                    <h3 class="section-heading">Para comunicarte con nosotros lo puedes hacer por el correo: ayudanosayudarba@gmail.com</h3>
                 </div>
             </div>
 

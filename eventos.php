@@ -24,12 +24,14 @@
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
             <h2 class="section-heading">Seminario Perfílate Laboralmente</h2>
-    <div class="row" style="margin-top: 30px;">
-              <p class="lead">Con mucho agrado este domingo 8 de Abril de 8:00 a 13:00, te invitamos a nuestro seminario donde se trataran temas importantes para un perfil laboral exitoso.</p>
-              <p class="lead">Si estás interesado en asistir regístrate <a href="registro.php">aquí</a> y nos pondremos en contacto contigo.</p>
+            <div class="row" style="margin-top: 30px;">
+              <div class="col-lg-12 col-sm-12">
+                <p class="lead">Con mucho agrado este domingo 15 de Abril de 8:00 a 13:00, te invitamos a nuestro seminario donde se trataran temas importantes para un perfil laboral exitoso.</p>
+                <p class="lead">Si estás interesado en asistir regístrate <a href="registro.php">aquí</a> y nos pondremos en contacto contigo.</p>
+              </div>
             </div>
             <div class="text-center">
-              <img src="img/Seminario_3.jpg" class="rounded mx-auto d-block img-responsive" alt="Flyer">
+              <img src="img/flyer.jpg" class="rounded mx-auto d-block img-responsive center-block" alt="Flyer">
             </div>
         
           </div>

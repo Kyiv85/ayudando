@@ -1,5 +1,6 @@
-# ayudando
-Proyecto solidario
+# Ayúdanos a Ayudar
+
+Proyecto sin fines de lucro
 
 Crear el config.php.ini en models/config con los parámetros:
 
