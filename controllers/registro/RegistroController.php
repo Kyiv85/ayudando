@@ -38,10 +38,10 @@ class RegistroController extends Conection {
     }
 
     //Guardar los datos
-    /*$this->insertUsuario($mbd,$data);
+    $this->insertUsuario($mbd,$data);
     if($this->error){
 			return false;
-		}*/
+		}
 
 		//Enviar el mensaje al usuario y a la cuenta de ayudanos a ayudar
 		$mail = EmailMG::sendEmail($data);

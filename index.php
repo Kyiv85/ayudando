@@ -1,5 +1,4 @@
-    
-    <?php include("includes/header.php"); ?>
+<?php include("includes/header.php"); ?>
     <?php include("includes/navbar.php"); ?>
 
 
@@ -10,22 +9,24 @@
 
             <div class="row">
                 <div class="col-lg-12">
+                        <img src="img/Ayudanos_logo.png" class="img-fluid img-responsive" alt="Responsive image">
+
                     <div class="intro-message">
-                        <h1 style="margin-bottom: 15px;">Ayúdanos a Ayudar</h1>
-                        <img src="img/AaA-sm.jpg" class="img-fluid" alt="Responsive image">
+
+                        <!--<h1 style="margin-bottom: 15px;">Ayúdanos a Ayudar</h1>-->
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                                <a href="https://www.instagram.com/ayudanosaayudarba/" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+                                <a href="mailto:ayudanosayudarba@gmail.com" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Correo</span></a>
                             </li>
                             <li>
                                 <a href="https://www.facebook.com/groups/1658225994219613/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                             </li>
                             <li>
-                                <a href="https://chat.whatsapp.com/8k0dgR4pHfGKs1KrBYv0uS" class="btn btn-default btn-lg"><i class="fa fa-whatsapp fa-fw"></i> <span class="network-name">WhatsApp</span></a>
+                               <!-- <a href="https://chat.whatsapp.com/8k0dgR4pHfGKs1KrBYv0uS" class="btn btn-default btn-lg"><i class="fa fa-whatsapp fa-fw"></i> <span class="network-name">WhatsApp</span></a>-->
                             </li>
                         </ul>
                     </div>
@@ -117,18 +118,16 @@
                 </div>
                 <div class="col-lg-7">
                     <ul class="list-inline banner-social-buttons">
-                        <li>
-                                <a href="#" class="btn btn-default btn-md"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                       <li>
+                                <a href="https://www.instagram.com/ayudanosaayudarba/" class="btn btn-default btn-md"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-md"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+                                <a href="mailto:ayudanosayudarba@gmail.com" class="btn btn-default btn-md"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Correo</span></a>
                             </li>
                             <li>
                                 <a href="https://www.facebook.com/groups/12572665761" class="btn btn-default btn-md"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                             </li>
-                            <li>
-                                <a href="https://chat.whatsapp.com/8k0dgR4pHfGKs1KrBYv0uS" class="btn btn-default btn-md"><i class="fa fa-whatsapp fa-fw"></i> <span class="network-name">WhatsApp</span></a>
-                            </li>
+                           
                     </ul>
                 </div>
             </div>

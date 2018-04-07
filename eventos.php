@@ -1,5 +1,4 @@
-    
-    <?php include("includes/header.php"); ?>
+<?php include("includes/header.php"); ?>
     <?php include("includes/navbar.php"); ?>
 
     <!-- Header -->
@@ -24,14 +23,15 @@
           <div class="col-lg-12 col-sm-12">
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
-            <h2 class="section-heading">Seminario perfílate Laboralmente</h2>
+            <h2 class="section-heading">Seminario Perfílate Laboralmente</h2>
+    <div class="row" style="margin-top: 30px;">
+              <p class="lead">Con mucho agrado este domingo 8 de Abril de 8:00 a 13:00, te invitamos a nuestro seminario donde se trataran temas importantes para un perfil laboral exitoso.</p>
+              <p class="lead">Si estás interesado en asistir regístrate <a href="registro.php">aquí</a> y nos pondremos en contacto contigo.</p>
+            </div>
             <div class="text-center">
-              <img src="img/flyer.jpg" class="rounded mx-auto d-block" alt="Flyer">
+              <img src="img/Seminario_3.jpg" class="rounded mx-auto d-block img-responsive" alt="Flyer">
             </div>
-            <div class="row" style="margin-top: 30px;">
-              <p class="lead">Para el domingo 8 de abirl estaremos realizando un seminario sobre herramientas de bśuqueda laboral, de manera que sirva de apoyo a los compatriotas que aún no consigan trabajo y pueden aprender a manejarse de una manera más eficiente en Argentina a la hora de conseguir empleo. La misma estára siendo de 8am a 1pm.</p>
-              <p class="lead">Vamos a estar llevando un registro y seleccionaremos un grupo de 30 personas entre distintos perfiles que puedan estar asistiendo a la ponencia. Si estás interesado en asitir regístrate <a href="registro.php">aquí</a> y nos pondremos en contacto contigo.</p>
-            </div>
+        
           </div>
         </div>
       </section>
@@ -50,4 +50,3 @@
     <?php  
         include("includes/footer.php");
     ?>
-
