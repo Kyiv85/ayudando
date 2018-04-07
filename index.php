@@ -5,41 +5,42 @@
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
-        <div class="container">
+      <div class="container">
 
-            <div class="row">
-                <div class="col-lg-12">
-                        <img src="img/Ayudanos_logo.png" class="img-fluid img-responsive" alt="Responsive image">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="intro-message">
 
-                    <div class="intro-message">
-
-                        <!--<h1 style="margin-bottom: 15px;">Ayúdanos a Ayudar</h1>-->
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="https://www.instagram.com/ayudanosaayudarba/" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
-                            </li>
-                            <li>
-                                <a href="mailto:ayudanosayudarba@gmail.com" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Correo</span></a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/groups/1658225994219613/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                            </li>
-                            <li>
-                               <!-- <a href="https://chat.whatsapp.com/8k0dgR4pHfGKs1KrBYv0uS" class="btn btn-default btn-lg"><i class="fa fa-whatsapp fa-fw"></i> <span class="network-name">WhatsApp</span></a>-->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <!--<h1 style="margin-bottom: 15px;">Ayúdanos a Ayudar</h1>-->
+            <div class="text-center">
+              <img src="img/Ayudanos_logo.png" class="img-responsive center-block" alt="Responsive image">
             </div>
-
+            <hr class="intro-divider">
+            <ul class="list-inline intro-social-buttons">
+              <li>
+                <a href="https://www.instagram.com/ayudanosaayudarba/" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+              </li>
+              <li>
+                <a href="mailto:ayudanosayudarba@gmail.com" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Correo</span></a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/groups/1658225994219613/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+              </li>
+              <li>
+                 <!-- <a href="https://chat.whatsapp.com/8k0dgR4pHfGKs1KrBYv0uS" class="btn btn-default btn-lg"><i class="fa fa-whatsapp fa-fw"></i> <span class="network-name">WhatsApp</span></a>-->
+              </li>
+            </ul>
+          </div>
         </div>
-        <!-- /.container -->
+      </div>
 
     </div>
-    <!-- /.intro-header -->
+    <!-- /.container -->
 
-    <!-- Page Content -->
+  </div>
+  <!-- /.intro-header -->
+
+  <!-- Page Content -->
 
 	<a  name="services"></a>
     <div class="content-section-a">
