@@ -12,7 +12,7 @@
     <meta property="og:title" content="Ayúdanos a Ayudar">
     <meta property="og:url" content="http://www.ayudanosayudarba.com/">
     <meta property="og:description" content="Para apoyar a los venezolanos en Argentina">
-    <meta property="og:image" content="../img/AaA.png">
+    <meta property="og:image" content="http://www.ayudanosayudarba.com/AaA.png">
     <meta property="og:type" content="article">
     <meta name="google" content="nositelinkssearchbox">
     <meta name="robots" content="index,follow">

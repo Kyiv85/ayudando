@@ -73,7 +73,7 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">¿Qué está pasando?</h2>
-                    <p class="lead">Debido a la cantidad de compatriotas que se vienen en situaciones cada vez más difíciles, a muchos de ellos se les ha hecho difícil conseguir empleo, alojamiento digno, o no han podido alimentarse bien. Hay casos extremos de personas o familias incluso que han quedado en situación de calle.</p>
+                    <p class="lead">Debido a la cantidad de paisanos que se vienen en situaciones cada vez más difíciles, a muchos de ellos se les ha hecho difícil conseguir empleo, alojamiento digno, o no han podido alimentarse bien. Hay casos extremos de personas o familias incluso que han quedado en situación de calle.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <img class="img-responsive" src="img/pp.jpg" alt="">
