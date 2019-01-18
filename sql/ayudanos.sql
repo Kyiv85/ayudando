@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 -- Base de datos: `ayudanos`
 --
 
-CREATE SCHEMA IF NOT EXISTS  `ayudanos` DEFAULT CHARACTER SET utf32 ;
+--CREATE SCHEMA IF NOT EXISTS  `ayudanos` DEFAULT CHARACTER SET utf32 ;
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `ayuUsuarios` (
   `usuEmail` varchar(50) NOT NULL,
   `tipCod` int(11) NOT NULL,
   `usuPais` varchar(50) NOT NULL,
-  `usuProvincia` varchar(50) NOT NULL,
+  `usuProvincia` varchar(50) NULL,
   `usuDireccion` varchar(100) NOT NULL,
   `usuTipo` enum('N','O','A') NOT NULL COMMENT 'Tipo de Usuario (N: Necesita ayuda, O: Ofrece ayuda, A: Ambos)',
   `usuProfesion` varchar(50) NOT NULL,
@@ -177,13 +177,13 @@ ALTER TABLE `ayuUsuarios` ADD UNIQUE(`usuEmail`);
 
 
 --Nuevo evento
-INSERT IGNORE INTO `ayudanos`.`ayuEventos` (`eveEstado`, `eveNombre`, `eveDireccion`, `eveFecha`, `eveFecAlta`)
+INSERT IGNORE INTO `ayuEventos` (`eveCod`,`eveEstado`, `eveNombre`, `eveDireccion`, `eveFecha`, `eveFecAlta`)
 VALUES
- ('A', 'Seminario CV Abril 2018', 'Sede ComIT. CABA', '2018-04-15', NOW()),
- ('A', 'Seminario CV Enero 2019', 'Colegio Don Bosco, Yapeyú 197. CABA', '2019-01-26', NOW());
+ (1, 'A', 'Seminario Perfílate Laboralmente', 'Sede ComIT Scalabrini Ortiz. CABA', '2018-04-15', NOW()),
+ (2, 'A', 'Seminario CV Enero 2019', 'Colegio Don Bosco, Yapeyú 197. CABA', '2019-01-26', NOW());
 
 --Códigos de validación
-CREATE TABLE IF NOT EXISTS `ayudanos`.`ayuCodigosValidacion` (
+CREATE TABLE IF NOT EXISTS `ayuCodigosValidacion` (
   `codID` INT NOT NULL AUTO_INCREMENT,
   `codEstado` enum('A','B') NOT NULL,
   `codHash` varchar(32) NOT NULL,
@@ -194,5 +194,5 @@ CREATE TABLE IF NOT EXISTS `ayudanos`.`ayuCodigosValidacion` (
   INDEX `codHash` (`codHash`)
   ) ENGINE=InnoDB;
 
-ALTER TABLE `ayudanos`.`ayuCodigosValidacion`
+ALTER TABLE `ayuCodigosValidacion`
 ADD CONSTRAINT `fk_cod_usu` FOREIGN KEY (`usuCod`) REFERENCES `ayuUsuarios` (`usuCod`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -139,7 +139,7 @@ class RegistroController extends Conection {
 		try {
       
       $sth = $mbd->query($sql);
-      $this->usuID = $mbd->insert_id;
+      $this->usuID = $mbd->lastInsertId();
        
     } catch (PDOException $e) {
     	$sth = [];

@@ -20,9 +20,14 @@ function submitForm(){
   var usuApellido = $('#usuApellido').val();
   var usuEmail = $('#usuEmail').val();
   var tipCod = $('#tipCod').val();
-  var usuApellido = $('#usuApellido').val();
   var usuDocumento = $('#usuDocumento').val();
   var usuPais = $('#usuPais').val();
+  try {
+    var usuEventos = document.getElementById("usuEventos").value;
+  }
+  catch(err) {
+    var usuEventos = null;
+  }
   var usuDireccion = $('#usuDireccion').val();
   var usuTipo = $('#usuTipo').val();
   var usuProfesion = $('#usuProfesion').val();
@@ -46,9 +51,9 @@ function submitForm(){
         usuApellido: usuApellido,
         usuEmail: usuEmail,
         tipCod: tipCod,
-        usuApellido: usuApellido,
         usuDocumento: usuDocumento,
         usuPais: usuPais,
+        usuEventos: usuEventos,
         usuDireccion: usuDireccion,
         usuTipo: usuTipo,
         usuProfesion: usuProfesion,
