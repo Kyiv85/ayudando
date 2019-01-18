@@ -6,7 +6,7 @@ include("../../libs/PHPMailer/PHPMailerAutoload.php");
 class EmailMG {
 
 
-	/* 
+	/**
 	* Envía el correo de confirmación al usuario PRODUCCIÓN CON cURL
 	* @param array $data Datos del usuario
 	* @return bool
@@ -46,7 +46,7 @@ class EmailMG {
 
 
 
-	/* 
+	/**
 	* Envía el correo de confirmación al usuario vía SMTP
 	* @param array $data Datos del usuario
 	* @return bool

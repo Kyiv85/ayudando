@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 -- Base de datos: `ayudanos`
 --
 
+CREATE SCHEMA IF NOT EXISTS  `ayudanos` DEFAULT CHARACTER SET utf32 ;
+
 -- --------------------------------------------------------
 
 --
@@ -50,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `ayuTipoDoc` (
 -- Volcado de datos para la tabla `ayuTipoDoc`
 --
 
-INSERT INTO `ayuTipoDoc` (`tipCod`, `tipDescripcion`) VALUES
+INSERT IGNORE INTO `ayuTipoDoc` (`tipCod`, `tipDescripcion`) VALUES
 (1, 'DNI'),
 (2, 'Cédula'),
 (3, 'Pasaporte');
@@ -172,3 +174,25 @@ ALTER TABLE `ayuUsuarios` CHANGE `usuComentarios` `usuComentarios` VARCHAR(150) 
 
 /*EMAIL UNIQUE*/
 ALTER TABLE `ayuUsuarios` ADD UNIQUE(`usuEmail`);
+
+
+--Nuevo evento
+INSERT IGNORE INTO `ayudanos`.`ayuEventos` (`eveEstado`, `eveNombre`, `eveDireccion`, `eveFecha`, `eveFecAlta`)
+VALUES
+ ('A', 'Seminario CV Abril 2018', 'Sede ComIT. CABA', '2018-04-15', NOW()),
+ ('A', 'Seminario CV Enero 2019', 'Colegio Don Bosco, Yapeyú 197. CABA', '2019-01-26', NOW());
+
+--Códigos de validación
+CREATE TABLE IF NOT EXISTS `ayudanos`.`ayuCodigosValidacion` (
+  `codID` INT NOT NULL AUTO_INCREMENT,
+  `codEstado` enum('A','B') NOT NULL,
+  `codHash` varchar(32) NOT NULL,
+  `usuCod` INT NOT NULL,
+  `codFecAlta` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `codFecBaja` timestamp NULL,
+  PRIMARY KEY (`codID`),
+  INDEX `codHash` (`codHash`)
+  ) ENGINE=InnoDB;
+
+ALTER TABLE `ayudanos`.`ayuCodigosValidacion`
+ADD CONSTRAINT `fk_cod_usu` FOREIGN KEY (`usuCod`) REFERENCES `ayuUsuarios` (`usuCod`) ON DELETE CASCADE ON UPDATE CASCADE;

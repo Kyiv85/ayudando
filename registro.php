@@ -10,7 +10,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <<div class="intro-message" style="padding-top:5px;padding-bottom:5px;">
+                    <div class="intro-message" style="padding-top:5px;padding-bottom:5px;">
                         <h1>Registrate</h1>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                             <div class="form-group">
                               <div class="controls">
                                 <label for="usuPais">País donde resides actualmente:</label>
-                                <select class="form-control" id="usuPais" name="usuPais" required data-error="Por favor elige una opción">
+                                <select required class="form-control" id="usuPais" name="usuPais" onChange="mostrarEvento(this.value)" data-error="Por favor elige una opción">
                                   <option value="Venezuela">Venezuela</option>
                                   <option value="Argentina">Argentina</option>
                                   <option value="Otro">Otro</option>
@@ -89,6 +89,7 @@
                                 <div class="help-block with-errors"></div>
                               </div>
                             </div>
+                            <div id="divEvento" style="display:none"></div>
                             <div class="form-group">
                               <div class="controls">
                                 <textarea id="usuDireccion" name="usuDireccion" rows="3" placeholder="Escribe tu dirección actual" class="form-control" required data-error="Escribe tu dirección actual"></textarea>
