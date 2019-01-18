@@ -23,31 +23,11 @@
           <div class="col-lg-12 col-sm-12">
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
-            <h2 class="section-heading">Nueva convocatoria de Revisión de CV</h2>
+            <h2 class="section-heading">Seminario Perfílate Laboralmente</h2>
             <div class="row" style="margin-top: 30px;">
               <div class="col-lg-12 col-sm-12">
-                <p class="lead">Te invitamos nuevamente a una charla sobre diseño y elaboración de CV's. También
-                  estaremos revisando CV's, hablaremos de cómo hacer networking efectivo para encontrar empleo en la
-                  red profesional Linkedin y manejo avanzado de portales de trabajo.</p>
+                <p class="lead">Con mucho agrado te invitamos este domingo 15 de Abril de 8:00 a 13:00 a nuestro seminario, donde se tratarán distintos temas para apoyarte a conseguir un perfil laboral exitoso.</p>
                 <p class="lead">Si estás interesado en asistir regístrate <a href="registro.php">aquí</a> y nos pondremos en contacto contigo.</p>
-                <p class="lead">
-                  <b>¿Quién invita?</b>
-                </p>
-                <p class="lead">
-                  El equipo de <b>Ayúdanos a Ayudar</b> con el apoyo del <b>Gobierno de la Ciudad de Buenos Aires</b>.
-                </p>
-                <p class="lead">
-                  <b>¿Cuándo?</b>
-                </p>
-                <p class="lead">
-                  Sábado 26 de Enero de 2019. A las 10:00 am. Duración 4horas. (Aforo limitado).
-                </p>
-                <p class="lead">
-                  <b>¿Dónde?</b>
-                </p>
-                <p class="lead">
-                  Colegio Don Bosco, Yapeyú 197. CABA.
-                </p>
                 <p class="lead">
                   <b>¿El seminario es gratuito?</b>
                 </p>
@@ -70,22 +50,20 @@
                   <b>¿Es para cualquier persona así no sea graduada/o?</b>
                 </p>
                 <p class="lead">
-                  Si, para todos los graduados universitarios o técnicos, así como para personas con un oficio o los que
-                  jamás hayan trabajado desde que llegaron.
-                </p>
-              </div>
-              <div class="col-lg-12 col-sm-12">
-                <p class="lead">
-                  <b>Puedes llevar agua y/o refrigerios para compartir.</b>
+                  Si, para todos los graduados universitarios o técnicos, así como para personas con un oficio o los que jamás hayan trabajado desde que llegaron.
                 </p>
                 <p class="lead">
-                  En caso de llevar niños tomar las previsiones.
+                  <b>¿Donde será el seminario?</b>
                 </p>
                 <p class="lead">
-                  <b>PUNTUALIDAD, es la consigna</b>
+                  Buenos Aires. Capital Federal.
                 </p>
               </div>
             </div>
+            <div class="text-center">
+              <img src="img/flyer.jpg" class="rounded mx-auto d-block img-responsive center-block" alt="Flyer">
+            </div>
+        
           </div>
         </div>
       </section>
