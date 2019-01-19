@@ -9,6 +9,7 @@ class RegistroController extends Conection {
 	
 	private $usuID = null;
 	private $codID = null;
+	private $existeUserEvent = false;
 	
 	
 	/********EVENTO SETEADO OJOOOOO ************/
@@ -34,28 +35,50 @@ class RegistroController extends Conection {
 			$mbd = null;
 			return false;
 		}
-
-		//Si ya existe un usuario mandar un error
+		
+		$mbd->beginTransaction();
+		
+    //Si ya existe un usuario mandar un error
 		foreach ($exist as $e) {
-      if($e["cant"] > 0){
-      	$this->error = "Ya existe un usuario registrado con ese correo o ese número de documento";
-      	$mbd = null;
-      	$exist = null;
-      	return false;	
+		  $this->usuID = $e["usuCod"];
+		  //Si el usuario existe y le dio a registrarse en el evento relacionarlo al evento
+      if(($data["usuPais"] == "Argentina") && ($data["usuEventos"] == "S")){
+        //Relacionar el usuario al evento
+        if(!($this->guardarUsuarioEvento($mbd,$this->eveCod))){
+          $mbd->rollBack();
+          $mbd = null;
+          $exist = null;
+          return false;
+        }
+        if(!($this->existeUserEvent))
+          $this->error = "Ya existe un usuario registrado con ese correo o ese número de documento pero fue registrado en el evento satisfactoriamente";
+        else
+          $this->error = "Ya existe un usuario registrado con ese correo o ese número de documento";
       }
+      else
+        $this->error = "Ya existe un usuario registrado con ese correo o ese número de documento";
+      $mbd->commit();
+      $mbd = null;
+      $exist = null;
+      return false;
     }
 
     //Guardar los datos
     $this->insertUsuario($mbd,$data);
     if($this->error){
-			return false;
+      $mbd->rollBack();
+      $mbd = null;
+      $exist = null;
+      return false;
 		}
   
 		//Verificar si el usuario se registró en un evento
-    if(isset($data["usuEventos"]) && ($data["usuEventos"] == "S")){
+    if(($data["usuPais"] == "Argentina") && ($data["usuEventos"] == "S")){
       //Relacionar el usuario al evento
       if(!($this->guardarUsuarioEvento($mbd,$this->eveCod))){
-        $this->error = "Hubo un incoveniente registrando el usuario";
+        $mbd->rollBack();
+        $mbd = null;
+        $exist = null;
         return false;
       }
     }
@@ -64,12 +87,16 @@ class RegistroController extends Conection {
     $mail = EmailMG::sendEmail($data);
     if(!($mail)){
       $this->error = "El usuario se registró satisfactoriamente, pero hubo un error al enviar el correo de confirmación. Por favor contacta con el administrador";
+      $mbd->commit();
+      $mbd = null;
+      $exist = null;
       return false;
     }
   
 
-		//Se cierran las conexiones si to tá bien
-		$mbd = null;
+		//Se commitea y se cierran las conexiones si to tá bien
+    $mbd->commit();
+    $mbd = null;
 		$exist = null;
 
 		return true;
@@ -85,11 +112,11 @@ class RegistroController extends Conection {
 	*/
 	private function existeUsuario($mbd,$data){
 		//Hacer un select count de los datos
-		$sql = 'SELECT COUNT(*) AS cant';
-		$sql .= ' FROM ayuUsuarios';
-		$sql .= ' WHERE ((usuEmail="'.$data["usuEmail"].'")';
-		$sql .= ' OR ((tipCod='.$data["tipCod"].')';
-		$sql .= ' AND (usuDocumento='.$data["usuDocumento"].')))';
+		$sql = 'SELECT *';
+    $sql .= ' FROM ayuUsuarios';
+    $sql .= ' WHERE ((usuEmail="'.$data["usuEmail"].'")';
+    $sql .= ' OR ((tipCod='.$data["tipCod"].')';
+    $sql .= ' AND (usuDocumento='.$data["usuDocumento"].')))';
 		
 		//Ejecutar la consulta
 		try {
@@ -98,11 +125,11 @@ class RegistroController extends Conection {
        
     } catch (PDOException $e) {
     	$sth = [];
-      error_log("Error al realizar la consulta: " . $e->getLine());
+      error_log("Error al realizar la consulta: " . $e->getMessage());
       $this->error = "Hubo un error validando la información del usuario, por favor contacta con el administrador";
  
     }
-
+    
     return $sth;
 
 	}
@@ -143,13 +170,44 @@ class RegistroController extends Conection {
        
     } catch (PDOException $e) {
     	$sth = [];
-      error_log("Error al realizar el insert en ayuUsuarios: " . $e->getLine());
+      error_log("Error al realizar el insert en ayuUsuarios: " . $e->getMessage());
       $this->error = "Hubo un error al guardar la información del usuario, por favor contacta con el administrador";
  
     }
 
     return $sth;
 	}
+  
+  
+  
+  /**
+   * Verifica si ya existe un usuario asociado a un evento en la BD
+   * @param object $mbd Objeto con la conexión a la BD
+   * @param int $eveCod Código del evento
+   * @return array
+   */
+  private function existeUsuarioEvento($mbd,$eveCod){
+    //Hacer un select count de los datos
+    $sql = 'SELECT *';
+    $sql .= ' FROM ayuUsuariosEventos';
+    $sql .= ' WHERE usuCod='.$this->usuID;
+    $sql .= ' AND eveCod='.$eveCod;
+    
+    //Ejecutar la consulta
+    try {
+      
+      $sth = $mbd->query($sql);
+      
+    } catch (PDOException $e) {
+      $sth = [];
+      error_log("Error al realizar la consulta: " . $e->getMessage());
+      $this->error = "Hubo un error validando la información del usuario, por favor contacta con el administrador";
+      
+    }
+    
+    return $sth;
+    
+  }
   
   
   /**
@@ -159,16 +217,23 @@ class RegistroController extends Conection {
    * @return bool
    */
   private function guardarUsuarioEvento($mbd,$eveCod){
+    //Verificar si existe el usuario
+    $existUserEvent = $this->existeUsuarioEvento($mbd,$eveCod);
+    if($this->error != "")
+      return false;
+    foreach ($existUserEvent as $e){
+      $this->existeUserEvent = true;
+      return true;
+    }
     //Hacer el insert
     $sql = 'INSERT INTO ayuUsuariosEventos(usuCod,eveCod,uevEstado,uevFecAlta)';
     $sql .= ' VALUES ('.$this->usuID.','.$eveCod.',"A",NOW())';
-    
     //Ejecutar la consulta
     try {
       $sth = $mbd->query($sql);
     } catch (PDOException $e) {
       $sth = [];
-      error_log("Error al realizar el insert en ayuUsuariosEventos: " . $e->getLine());
+      error_log("Error al realizar el insert en ayuUsuariosEventos: " . $e->getMessage());
       $this->error = "Hubo un error al guardar la información del usuario, por favor contacta con el administrador";
     }
     
@@ -195,7 +260,7 @@ class RegistroController extends Conection {
       
     } catch (PDOException $e) {
       $sth = [];
-      error_log("Error al realizar el insert en ayuCodigosValidacion: " . $e->getLine());
+      error_log("Error al realizar el insert en ayuCodigosValidacion: " . $e->getMessage());
       $this->error = "Hubo un error al guardar la información del usuario, por favor contacta con el administrador";
     }
 	  

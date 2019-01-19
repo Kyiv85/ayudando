@@ -21,7 +21,7 @@ class Conection {
        
     } catch (PDOException $e) {
                       
-      error_log("Error en la conexión: " . $e->getLine());
+      error_log("Error en la conexion: " . $e->getMessage());
       return false; 
     }
      

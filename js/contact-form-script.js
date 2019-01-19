@@ -79,6 +79,9 @@ function submitForm(){
 
 function formSuccess(){
   $("#contactForm")[0].reset();
+  var divEvento = document.getElementById("divEvento");
+  $(divEvento).fadeOut();
+  divEvento.innerHTML = '';
   submitMSG(true, "Registro completado exitosamente!")
 }
 
