@@ -22,12 +22,7 @@ function submitForm(){
   var tipCod = $('#tipCod').val();
   var usuDocumento = $('#usuDocumento').val();
   var usuPais = $('#usuPais').val();
-  try {
-    var usuEventos = document.getElementById("usuEventos").value;
-  }
-  catch(err) {
-    var usuEventos = null;
-  }
+  var usuEventos = document.getElementById("usuEventos").value;
   var usuDireccion = $('#usuDireccion').val();
   var usuTipo = $('#usuTipo').val();
   var usuProfesion = $('#usuProfesion').val();
@@ -35,10 +30,15 @@ function submitForm(){
 
   //Validar el reCaptcha
   var response = grecaptcha.getResponse();
+  
   if(response.length == 0){
     //reCaptcha not verified
     formError();
     submitMSG(false,'Valida el reCaptcha');
+  }
+  if((usuPais == "Venezuela") && (usuEventos == "S")){
+    formError();
+    submitMSG(false,'NO PUEDES ASISITIR AL EVENTO SI VIVES EN VENEZUELA!!!, POR FAVOR VERIFICA LA INFORMACIÓN!!!',true);
   }
   else{
     //Procesar info
@@ -91,11 +91,14 @@ function formError(){
   });
 }
 
-function submitMSG(valid, msg){
+function submitMSG(valid, msg, h1=false){
   if(valid){
     var msgClasses = "h3 text-center tada animated text-success";
   } else {
-    var msgClasses = "h3 text-center text-danger";
+    if(h1)
+      var msgClasses = "h1 text-center text-danger";
+    else
+      var msgClasses = "h3 text-center text-danger";
   }
   $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 }
