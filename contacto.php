@@ -27,11 +27,13 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Participamos en el proyecto:</h2>
                     <ul>
-                        <li><p class="lead">Laurys</p></li>
-                        <li><p class="lead">Zaraid</p></li>
-                        <li><p class="lead">Daniel</p></li>
-                        <li><p class="lead">Adolfo</p></li>
-                        <li><p class="lead">Milagros</p></li>
+                      <li><p class="lead">Laurys</p></li>
+                      <li><p class="lead">Zaraid</p></li>
+                      <li><p class="lead">Daniel</p></li>
+                      <li><p class="lead">Milagros</p></li>
+                      <li><p class="lead">Mauricio</p></li>
+                      <li><p class="lead">Astrid</p></li>
+                      <li><p class="lead">Yindriska</p></li>
                     </ul>
                     <h3 class="section-heading">Para comunicarte con nosotros lo puedes hacer por el correo: ayudanosayudarba@gmail.com</h3>
                 </div>
