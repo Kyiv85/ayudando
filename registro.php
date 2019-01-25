@@ -89,7 +89,7 @@
                                 <div class="help-block with-errors"></div>
                               </div>
                             </div>
-                            <div class="form-group" style="display:none;">
+                            <!--<div class="form-group">
                               <div class="controls">
                                 <label for="usuEventos">¿Deseas asistir al próximo seminario?</label>
                                 <select required class="form-control" id="usuEventos" name="usuEventos" data-error="Por favor elige una opción">\n' +
@@ -98,7 +98,7 @@
                                 </select>
                                 <div id="usuEventosErr" class="help-block with-errors"></div>
                               </div>
-                            </div>
+                            </div>-->
                             <div class="form-group">
                               <div class="controls">
                                 <textarea id="usuDireccion" name="usuDireccion" rows="3" placeholder="Escribe tu dirección actual" class="form-control" required data-error="Escribe tu dirección actual"></textarea>
