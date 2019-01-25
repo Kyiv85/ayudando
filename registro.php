@@ -80,18 +80,18 @@
                             </div>
                             <div class="form-group">
                               <div class="controls">
-                                <label for="usuPais"><h1 style="color:#FF0000">País donde resides actualmente:</h1></label>
+                                <label for="usuPais"><b style="color:#FF0000">País donde resides actualmente:</b></label>
                                 <select required class="form-control" id="usuPais" name="usuPais" onChange="mostrarEvento(this.value)" data-error="Por favor elige una opción">
-                                  <option value="Venezuela">Venezuela</option>
                                   <option value="Argentina">Argentina</option>
+                                  <option value="Venezuela">Venezuela</option>
                                   <option value="Otro">Otro</option>
                                 </select> 
                                 <div class="help-block with-errors"></div>
                               </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="display:none;">
                               <div class="controls">
-                                <label for="usuEventos"><h1 style="color:#FF0000">¿Deseas asistir al próximo seminario?</h1></label>
+                                <label for="usuEventos">¿Deseas asistir al próximo seminario?</label>
                                 <select required class="form-control" id="usuEventos" name="usuEventos" data-error="Por favor elige una opción">\n' +
                                   <option value="S" selected>Si</option>
                                   <option value="N">No</option>
