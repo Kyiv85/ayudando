@@ -29,7 +29,7 @@
                 <p class="lead">Te invitamos nuevamente a una charla sobre diseño y elaboración de CV's. También
                   estaremos revisando CV's, hablaremos de cómo hacer networking efectivo para encontrar empleo en la
                   red profesional Linkedin y manejo avanzado de portales de trabajo.</p>
-                <p class="lead">Si estás interesado en asistir regístrate <a href="registro.php">aquí</a> y nos pondremos en contacto contigo.</p>
+                <p class="lead" style="color:#FF0000;"><b>Registro cerrado. Muchas gracias por participar!!!</b></p>
                 <p class="lead">
                   <b>¿Quién invita?</b>
                 </p>
