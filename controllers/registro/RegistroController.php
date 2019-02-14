@@ -84,6 +84,8 @@ class RegistroController extends Conection {
     }
     
     //Enviar el mensaje al usuario y a la cuenta de ayudanos a ayudar
+    $data["subject"] = 'Registro generado satisfactoriamente!';
+    $data["body"] = '<b>Hola '.$data["usuNombre"].' '.$data["usuApellido"].'!</b>, <br><br><br>Gracias por registrarte en nuestro portal. Esperemos que puedas apoyarnos en brindar ayuda o que podamos ayudarte si lo necesitas. Nos estaremos contactando contigo por esta vía en caso de ser necesario. <br><br>Saludos!.<br>El Equipo de Ayúdanos a Ayudar.';
     $mail = EmailMG::sendEmail($data);
     if(!($mail)){
       $this->error = "El usuario se registró satisfactoriamente, pero hubo un error al enviar el correo de confirmación. Por favor contacta con el administrador";

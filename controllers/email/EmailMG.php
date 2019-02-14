@@ -52,10 +52,9 @@ class EmailMG {
 	* @return bool
 	*/
 	public static function sendEmail($data) {
-
+  
 		//Archivo con los parámetros de configuración del correo
 		include("../../models/config/config.php.ini");
-
 		//Usar valores
 		$mail = new PHPMailer();
   	$mail->setFrom($mail_mg,$nombre_mg);
@@ -73,9 +72,8 @@ class EmailMG {
     $mail->isHTML(true);   // Set email to be sent as HTML, if you are planning on sending plain text email just set it to false
 
     // The following is self explanatory
-    $mail->Subject = 'Registro generado satisfactoriamente!';
-    $mail->Body    = '<b>Hola '.$data["usuNombre"].' '.$data["usuApellido"].'!</b>, <br><br><br>Gracias por registrarte en nuestro portal. Esperemos que puedas apoyarnos en brindar ayuda o que podamos ayudarte si lo necesitas. Nos estaremos contactando contigo por esta vía en caso de ser necesario. <br><br>Saludos!.<br>El Equipo de Ayúdanos a Ayudar.';
-  
+    $mail->Subject = $data["subject"];
+    $mail->Body    = $data["body"];
   	if (!$mail->send()) {
     	error_log('Hubo un error enviando el correo: '.$mail->ErrorInfo);
       return false; 

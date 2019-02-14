@@ -22,7 +22,7 @@ function submitForm(){
   var tipCod = $('#tipCod').val();
   var usuDocumento = $('#usuDocumento').val();
   var usuPais = $('#usuPais').val();
-  var usuEventos = document.getElementById("usuEventos").value;
+  //var usuEventos = document.getElementById("usuEventos").value;
   var usuDireccion = $('#usuDireccion').val();
   var usuTipo = $('#usuTipo').val();
   var usuProfesion = $('#usuProfesion').val();
@@ -36,10 +36,10 @@ function submitForm(){
     formError();
     submitMSG(false,'Valida el reCaptcha');
   }
-  if((usuPais == "Venezuela") && (usuEventos == "S")){
+  /*if((usuPais == "Venezuela") && (usuEventos == "S")){
     formError();
     submitMSG(false,'NO PUEDES ASISITIR AL EVENTO SI VIVES EN VENEZUELA!!!, POR FAVOR VERIFICA LA INFORMACIÓN!!!',true);
-  }
+  }*/
   else{
     //Procesar info
     $.ajax({
@@ -53,7 +53,7 @@ function submitForm(){
         tipCod: tipCod,
         usuDocumento: usuDocumento,
         usuPais: usuPais,
-        usuEventos: usuEventos,
+        //usuEventos: usuEventos,
         usuDireccion: usuDireccion,
         usuTipo: usuTipo,
         usuProfesion: usuProfesion,
@@ -79,9 +79,9 @@ function submitForm(){
 
 function formSuccess(){
   $("#contactForm")[0].reset();
-  var divEvento = document.getElementById("divEvento");
+  /*var divEvento = document.getElementById("divEvento");
   $(divEvento).fadeOut();
-  divEvento.innerHTML = '';
+  divEvento.innerHTML = '';*/
   submitMSG(true, "Registro completado exitosamente!")
 }
 

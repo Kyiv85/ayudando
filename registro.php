@@ -81,7 +81,8 @@
                             <div class="form-group">
                               <div class="controls">
                                 <label for="usuPais"><b style="color:#FF0000">País donde resides actualmente:</b></label>
-                                <select required class="form-control" id="usuPais" name="usuPais" onChange="mostrarEvento(this.value)" data-error="Por favor elige una opción">
+                                <select required class="form-control" id="usuPais" name="usuPais" data-error="Por favor elige una opción">
+                                <!--<select required class="form-control" id="usuPais" name="usuPais" onChange="mostrarEvento(this.value)" data-error="Por favor elige una opción">-->
                                   <option value="Argentina">Argentina</option>
                                   <option value="Venezuela">Venezuela</option>
                                   <option value="Otro">Otro</option>
