@@ -2,8 +2,9 @@
 <html <?php language_attributes(); ?> class="no-js">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     
     <!--  Essential META Tags -->
     <meta name="description" content="Proyecto solidario y sin fines de lucro de venezolanos en Argentina para brindar apoyo a los compatriotas en condición de riesgo que vienen huyendo de la crisis humanitaria en Venezuela">
@@ -24,16 +25,6 @@
 
 
     <title><?php wp_title( '|', true, 'right' ); ?></title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/landing-page.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Fav Icon -->
     <link rel="icon" href="favicon.ico">
