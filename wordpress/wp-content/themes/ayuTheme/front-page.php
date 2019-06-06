@@ -1,6 +1,4 @@
 <?php get_header(); ?>
-  <?php get_sidebar(); ?>
-
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
@@ -12,7 +10,7 @@
 
             <!--<h1 style="margin-bottom: 15px;">Ayúdanos a Ayudar</h1>-->
             <div class="text-center">
-              <img src="img/Ayudanos_logo.png" class="img-responsive center-block" alt="Responsive image">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/Ayudanos_logo.png" class="img-responsive center-block" alt="Responsive image">
             </div>
             <hr class="intro-divider">
             <ul class="list-inline intro-social-buttons">
@@ -53,7 +51,7 @@
                     <p class="lead">Para nadie es un secreto la fuerte situación social, política y económica en la que se encuentra nuestro país Venezuela. Muchos hemos tenido que salir hacia países vecinos huyendo de la CRISIS HUMANITARIA y en la gran mayoría de casos en condiciones bastante precarias y con poca planificación. Argentina, entre otros países de la región, ha sido un refugio para los venezolanos que buscan huir de la tragedia en la que se ha sumido el que otrora era uno de los países más ricos del continente. Algunos hemos corrido con suerte y poco a poco nos hemos ido estableciendo. Lamentablemente, no todos corren con la misma suerte </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/abrazo.jpg" alt="">
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/abrazo.jpg" alt="">
                 </div>
             </div>
 
@@ -75,7 +73,7 @@
                     <p class="lead">Debido a la cantidad de paisanos que se vienen en situaciones cada vez más difíciles, a muchos de ellos se les ha hecho difícil conseguir empleo, alojamiento digno, o no han podido alimentarse bien. Hay casos extremos de personas o familias incluso que han quedado en situación de calle.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/pp.jpg" alt="">
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/pp.jpg" alt="">
                 </div>
             </div>
 
@@ -97,7 +95,7 @@
                     <p class="lead">Los venezolanos residentes  en Argentina (y todo aquél que se quiera sumar), y que tengan la disponibilidad de prestar ayuda bien sea económica, logística, comida, apoyo y asesoría legal, migratoria y psicológica. Principalmente para las personas en estado de indigencia, o los que están en situaciones de pobreza extrema</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/flags.jpg" alt="">
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/img/flags.jpg" alt="">
                 </div>
             </div>
 

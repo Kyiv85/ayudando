@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
             </div>
           </div><!-- /.container -->
         </div>
-        <div class="content-section-a">  
+        <div class="content-section-a" style="width:800px;">  
           <article id="post-<?php the_ID();?>" <?php post_class();?>>
             <?php the_content();?>
           </article>
