@@ -38,11 +38,6 @@ function ayuTheme_setup() {
 	add_theme_support( 'woocommerce' );
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
-
-	register_nav_menus( array(
-      'navegation' => __( 'menu-index' ),
-    ));
 	
 	/*
 	 * Switch default core markup for search form, comment form, and comments
