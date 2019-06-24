@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+    /*
+    * Plantilla para página de inicio
+    */
+
+    // Exit if accessed directly
+    defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
+    <?php get_header(); ?>
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
@@ -22,9 +29,6 @@
               </li>
               <li>
                 <a href="https://www.facebook.com/groups/1658225994219613/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-              </li>
-              <li>
-                 <!-- <a href="https://chat.whatsapp.com/8k0dgR4pHfGKs1KrBYv0uS" class="btn btn-default btn-lg"><i class="fa fa-whatsapp fa-fw"></i> <span class="network-name">WhatsApp</span></a>-->
               </li>
             </ul>
           </div>

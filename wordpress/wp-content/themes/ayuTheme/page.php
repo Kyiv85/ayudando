@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
  
 <?php get_header();?>
   
-  <?php get_sidebar();
+  <?php
  
     if (have_posts()) :
  

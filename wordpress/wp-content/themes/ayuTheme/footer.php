@@ -1,3 +1,6 @@
+<?php
+// Exit if accessed directly
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
 <!-- Footer -->
 <footer>
     <div class="container">

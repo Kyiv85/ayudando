@@ -1,3 +1,7 @@
+<?php
+// Exit if accessed directly
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+?>
 <!-- Archivo de cabecera global de Wordpress -->
 <?php get_header(); ?>
 <h1>Este es mi home</h1>
