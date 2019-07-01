@@ -1,7 +1,5 @@
 <?php
-/*
-* Plantilla para todas las páginas
-*/
+/* Template Name: CustomPageBlog */
 
 // Exit if accessed directly
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
@@ -44,7 +42,13 @@ if (have_posts()) :
                 <?php wp_link_pages(); ?>
               </div><!--. entry-->
               <div class="post-footer">
-                <div class="comments"><?php comments_popup_link( 'Leave a Comment', '1 Comment', '% Comments' ); ?></div>
+                <div class="comments">
+                <?php
+                  if (comments_open()){
+                    comments_template();
+                  }
+                ?>
+                </div>
               </div><!--.post-footer-->
               <nav class="navigation index">
                 <div class="alignleft"><?php next_posts_link( 'Older Entries' ); ?></div>
