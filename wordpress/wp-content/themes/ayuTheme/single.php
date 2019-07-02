@@ -33,14 +33,22 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                 <hr class="section-heading-spacer">
                 <div class="clearfix"></div>
                 <div class="post-header">
-                  <div class="date"><?php the_time( 'j-M-Y' ); ?></div>
-                  <h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-                  <div class="author"><?php the_author(); ?></div>
+                  <div class="date"><?php the_time( 'j-M-Y H:m:i' ); ?></div>
+                  <h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                  <div class="author">
+                    <h4>Publicado por:</h4>
+                    <h5>
+                      <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                      <span style="margin-left:25px;"><?php the_author(); ?></span>
+                    </h5>
+                  </div>
                 </div><!--.post-header-->
-                <div class="entry clear">
+                <div class="entry-clear">
                   <?php if ( function_exists( 'add_theme_support' ) ) the_post_thumbnail(); ?>
                   <?php the_content(); ?>
-                  <?php edit_post_link(); ?>
+                  <?php if(current_user_can('administrator')): ?>
+                    <?php edit_post_link(); ?>
+                  <?php endif; ?>
                   <?php wp_link_pages(); ?>
                 </div><!--. entry-->
                 <div class="post-footer">
