@@ -454,6 +454,33 @@ return sprintf($message);
 add_action( 'init', 'my_custom_init' );
 
 
+function getPostViews($postID){
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if($count==''){
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+    return "0 View";
+  }
+  return $count.' Views';
+}
+
+function setPostViews($postID) {
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if($count==''){
+    $count = 0;
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+  }else{
+    $count++;
+    update_post_meta($postID, $count_key, $count);
+  }
+}
+// Remove issues with prefetching adding extra views
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+
 function my_custom_init() {
         $labels = array(
         'name' => _x( 'Libros', 'post type general name' ),
@@ -468,7 +495,7 @@ function my_custom_init() {
         'not_found_in_trash' => __( 'No se han encontrado Libros en la papelera' ),
         'parent_item_colon' => ''
     );
- 
+
     // Creamos un array para $args
     $args = array( 'labels' => $labels,
         'public' => true,
@@ -481,6 +508,6 @@ function my_custom_init() {
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
     );
- 
-    register_post_type( 'libro', $args ); 
+
+    register_post_type( 'libro', $args );
 }
