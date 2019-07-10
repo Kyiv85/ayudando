@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                 <div class="clearfix"></div>
                 <div class="post-header">
                   <div class="date"><?php the_time( 'j-M-Y H:m:i' ); ?></div>
-                  <h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                  <h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
                   <div class="author">
                     <h4>Publicado por:</h4>
                     <h5>
@@ -49,7 +49,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                   <?php if(current_user_can('administrator')): ?>
                     <?php edit_post_link(); ?>
                   <?php endif; ?>
-                  <?php wp_link_pages(); ?>
+                  <br><br>
+                  <a href="<?php echo get_page_link( get_page_by_title( 'Blog' )->ID ); ?>">Volver a Blog</a>
                 </div><!--. entry-->
                 <div class="post-footer">
                   <div class="comments">
@@ -60,10 +61,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                     ?>
                   </div>
                 </div><!--.post-footer-->
-                <nav class="navigation index">
-                  <div class="alignleft"><?php next_posts_link( 'Older Entries' ); ?></div>
-                  <div class="alignright"><?php previous_posts_link( 'Newer Entries' ); ?></div>
-                </nav><!--.navigation-->
               </div>
             </div><!-- row -->
           </div><!-- container -->

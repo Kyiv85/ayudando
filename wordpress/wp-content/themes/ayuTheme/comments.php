@@ -14,67 +14,23 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="disqus_thread"></div>
+<script>
 
-  <?php
-  // You can start editing here -- including this comment!
-  if ( have_comments() ) :
-    ?>
-    <h2 class="comments-title">
-      <?php
-      $comments_number = get_comments_number();
-      if ( '1' === $comments_number ) {
-        /* translators: %s: post title */
-        printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'ayuTheme' ), get_the_title() );
-      } else {
-        printf(
-        /* translators: 1: number of comments, 2: post title */
-          _nx(
-            '%1$s Reply to &ldquo;%2$s&rdquo;',
-            '%1$s Replies to &ldquo;%2$s&rdquo;',
-            $comments_number,
-            'comments title',
-            'ayuTheme'
-          ),
-          number_format_i18n( $comments_number ),
-          get_the_title()
-        );
-      }
-      ?>
-    </h2>
-
-    <ol class="comment-list">
-      <?php
-      wp_list_comments(
-        array(
-          'avatar_size' => 50,
-          'style'       => 'ol',
-          'short_ping'  => true,
-          'reply_text'  => 'Reply',
-        )
-      );
-      ?>
-    </ol>
-
-    <?php
-    the_comments_pagination(
-      array(
-        'prev_text' => '<span class="screen-reader-text">Previous</span>',
-        'next_text' => '<span class="screen-reader-text">Next</span>',
-      )
-    );
-
-  endif; // Check for have_comments().
-
-  // If comments are closed and there are comments, let's leave a little note, shall we?
-  if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-    ?>
-
-    <p class="no-comments"><?php _e( 'Comments are closed.', 'ayuTheme' ); ?></p>
-  <?php
-  endif;
-
-  comment_form();
-  ?>
-
-</div><!-- #comments -->
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ayudanosayudarba-test.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

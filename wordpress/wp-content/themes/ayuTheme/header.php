@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   
   <!--  Essential META Tags -->
-  <meta name="description" content="Proyecto solidario y sin fines de lucro de venezolanos en Argentina para brindar apoyo a los compatriotas en condición de riesgo que vienen huyendo de la crisis humanitaria en Venezuela">
+  <meta name="description" content="Proyecto solidario y sin fines de lucro de venezolanos en Argentina para brindar apoyo a los coterráneos en condición de riesgo que vienen huyendo de la crisis humanitaria en Venezuela">
   <meta property="og:title" content="Ayúdanos a Ayudar">
   <meta property="og:url" content="http://www.ayudanosayudarba.com/">
   <meta property="og:description" content="Para apoyar a los venezolanos en Argentina">
@@ -23,7 +23,7 @@
   <![endif]-->
   <?php wp_head(); ?>
 
-  <title><?php wp_title( '|', true, 'right' ); ?></title>
+  <title><?php wp_title( '|', true, 'right' ); ?>Ayúdanos a Ayudar BA</title>
 
   <!-- Fav Icon -->
   <link rel="icon" href="favicon.ico">
@@ -57,7 +57,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="eventos.php">Eventos</a>
+            <a href="<?php echo get_page_link( get_page_by_title( 'Blog' )->ID ); ?>">Blog</a>
           </li>
           <li>
             <a href="registro.php">Registro</a>
