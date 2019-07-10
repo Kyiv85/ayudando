@@ -9,9 +9,9 @@
   <!--  Essential META Tags -->
   <meta name="description" content="Proyecto solidario y sin fines de lucro de venezolanos en Argentina para brindar apoyo a los coterráneos en condición de riesgo que vienen huyendo de la crisis humanitaria en Venezuela">
   <meta property="og:title" content="Ayúdanos a Ayudar">
-  <meta property="og:url" content="http://www.ayudanosayudarba.com/">
+  <meta property="og:url" content="https://www.ayudanosayudarba.com/">
   <meta property="og:description" content="Para apoyar a los venezolanos en Argentina">
-  <meta property="og:image" content="http://www.ayudanosayudarba.com/AaA.png">
+  <meta property="og:image" content="https://www.ayudanosayudarba.com/AaA.png">
   <meta property="og:type" content="article">
   <meta name="google" content="nositelinkssearchbox">
   <meta name="robots" content="index,follow">
@@ -78,7 +78,7 @@
             <a href="<?php echo get_page_link( get_page_by_title( 'Blog' )->ID ); ?>">Blog</a>
           </li>
           <li>
-            <a href="registro.php">Registro</a>
+            <a href="<?php echo get_page_link( get_page_by_title( 'Registro' )->ID ); ?>">Registro</a>
           </li>
           <li>
             <a href="<?php echo get_page_link( get_page_by_title( 'Contacto' )->ID ); ?>">Contacto</a>
