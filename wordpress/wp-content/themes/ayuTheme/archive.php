@@ -1,6 +1,6 @@
 <?php
 /*
-* Plantilla para todas las páginas
+* Plantilla para archivo
 */
 
 // Exit if accessed directly
