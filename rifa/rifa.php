@@ -1,7 +1,5 @@
-<?php //This is a test ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -11,7 +9,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Registro de números</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -25,77 +23,70 @@
 
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
+    
+    <!-- Rifa JS-->
+    <script src="js/rifa.js"></script>
+    
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="showNumbers()">
     <div class="page-wrapper bg-blue font-robo">
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-heading"></div>
+                <div id="mensajes"></div>
                 <div class="card-body">
                     <h2 class="title">Registro de número</h2>
-                    <form method="POST">
+                    <form id="formUser" method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Nombre" name="rifNombre">
+                            <input class="input--style-1" type="text" placeholder="Nombre" id="rifNombre" name="rifNombre">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Apellido" name="rifApellido">
+                            <input class="input--style-1" type="text" placeholder="Apellido" id="rifApellido" name="rifApellido">
                         </div>
                         <div class="row row-space">
-                            <!--<div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-1 js-datepicker" type="text" placeholder="BIRTHDATE" name="birthday">
-                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                </div>
-                            </div>-->
-                            <div class="col-2">
+                            <div class="col-md-6">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="rifTipoDocumento">
-                                            <option disabled="disabled" selected="selected">Tipo de Documento</option>
-                                            <option>DNI</option>
-                                            <option>Precaria</option>
-                                            <option>Cédula</option>
-                                            <option>Pasaporte</option>
+                                        <label>Tipo de documento</label>
+                                        <select id="rifTipoDocumento" name="rifTipoDocumento">
+                                            <option value="dni">DNI</option>
+                                            <option value="precaria">Precaria</option>
+                                            <option value="cedula">Cédula</option>
+                                            <option value="pasaporte">Pasaporte</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-md-6">
                                 <div class="input-group">
-                                <input class="input--style-1" type="number" placeholder="Número" name="rifNumDocumento">
+                                <input class="input--style-1" type="number" onkeydown="onlyNumbers(this)" placeholder="Número" id="rifNumDocumento" name="rifNumDocumento">
                                 </div>
                             </div>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="number" placeholder="Teléfono" name="rifTelefono">
+                            <input class="input--style-1" type="number" onkeydown="onlyNumbers(this)" placeholder="Teléfono" id="rifTelefono" name="rifTelefono">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="email" placeholder="Correo" name="rifCorreo">
+                            <input class="input--style-1" type="email" placeholder="Correo" id="rifCorreo" name="rifCorreo">
                         </div>
                         <div class="input-group">
                             <div style="margin: inherit;">
                                 <label>Números a escoger:</label>
                             </div>
-                            <div class="row row-space">
-                                <?php
-                                    for($i=0;$i<1000;$i++){
-                                        echo '
-                                        <div class="col-2">
-                                            <div class="input-group">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                                    <label class="form-check-label" for="inlineCheckbox1">'.str_pad(strval($i), 3, "0", STR_PAD_LEFT).'</label>
-                                                </div>
-                                            </div>
-                                        </div>';
-                                    }
-                                ?>
+                            <div id="rifNumbers" class="row row-space">
                             </div>
                         </div>
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                            <button onclick="process(this)" class="btn btn--radius btn--green" type="button">Enviar</button>
                         </div>
                     </form>
                 </div>
