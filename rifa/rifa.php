@@ -86,7 +86,8 @@
                             </div>
                         </div>
                         <div class="p-t-20">
-                            <button onclick="process(this)" class="btn btn--radius btn--green" type="button">Enviar</button>
+                            <button type="button" onclick="process(this)" class="btn btn-primary">Enviar</button>
+                            <button type="reset" class="btn btn-secondary">Limpiar</button>
                         </div>
                     </form>
                 </div>

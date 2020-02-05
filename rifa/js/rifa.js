@@ -77,11 +77,17 @@ function process(e){
         xmlhttp.open("POST", url, true);
         xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xmlhttp.overrideMimeType("application/json");
         xmlhttp.send('accion=procesarNumeros&rifNombre='+rifNombre+'&rifApellido='+rifApellido+'&rifTipoDocumento='+rifTipoDocumento+'&rifNumDocumento='+rifNumDocumento+'&rifTelefono='+rifTelefono+'&rifCorreo='+rifCorreo+'&rifNumbers='+rifNumbers);
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.status == 200) {
                 if((xmlhttp.responseText).length>0 && msg){
-                    alert(xmlhttp.responseText);
+                    var data = JSON.parse(xmlhttp.responseText);
+                    alert(data.mensaje);
+                    if(data.error == 'NO'){
+                        showNumbers();
+                        document.getElementById("formUser").reset();
+                    }
                     msg=false;
                 }
             }
