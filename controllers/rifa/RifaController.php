@@ -76,7 +76,7 @@ class RifaController {
         }
         
         //Relacionar el usuario al evento
-        if(!($this->guardarUsuarioNumeros($mbd,$data['rifNumbers']))){
+        if(!($this->guardarUsuarioNumeros($mbd,$data))){
             $mbd->rollBack();
             $mbd = null;
             $exist = null;
@@ -157,16 +157,16 @@ class RifaController {
     /**
     * Relaciona un usuario con sus números en BD
     * @param object $mbd Objeto con la conexión a la BD
-    * @param string $rifNumbers Números elegidos por el usuario
+    * @param string $data Datos a guardar
     * @return bool
     */
-    private function guardarUsuarioNumeros($mbd,$rifNumbers)
+    private function guardarUsuarioNumeros($mbd,$data)
     {
-        $numbers = explode(',',$rifNumbers);
+        $rifNumbers = explode(',',$data['rifNumbers']);
         //Hacer inserts
-        foreach ($numbers as $n){
-            $sql = 'INSERT INTO rifNumerosUsuarios(rifUsuID,rifNumero)';
-            $sql .= ' VALUES ('.$this->rifUsuID.','.$n.')';
+        foreach ($rifNumbers as $n){
+            $sql = 'INSERT INTO rifNumerosUsuarios(rifUsuID,rifNumero,rifPago,rifTicketElectronico)';
+            $sql .= ' VALUES ('.$this->rifUsuID.','.$n.',"'.$data["rifPago"].'","'.$data["rifTicketElectronico"].'")';
             //Ejecutar
             try {
                 $sth = $mbd->query($sql);

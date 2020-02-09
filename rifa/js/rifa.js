@@ -48,6 +48,8 @@ function process(e){
     var rifNumDocumento = document.getElementById("rifNumDocumento").value;
     var rifTelefono = document.getElementById("rifTelefono").value;
     var rifCorreo = document.getElementById("rifCorreo").value;
+    var rifPago = document.getElementById("rifPago").value;
+    var rifTicketElectronico = document.getElementById("rifTicketElectronico").value;
     var rifNumbers = [];
     var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
     for (var i = 0; i < checkboxes.length; i++) {
@@ -78,7 +80,7 @@ function process(e){
         var xmlhttp = new XMLHttpRequest();
         var url = "../responses/rifa/responseShowNumbers.php";
         var msg=true;
-        var params = 'accion=procesarNumeros&rifNombre='+rifNombre+'&rifApellido='+rifApellido+'&rifTipoDocumento='+rifTipoDocumento+'&rifNumDocumento='+rifNumDocumento+'&rifTelefono='+rifTelefono+'&rifCorreo='+rifCorreo+'&rifNumbers='+rifNumbers;
+        var params = 'accion=procesarNumeros&rifNombre='+rifNombre+'&rifApellido='+rifApellido+'&rifTipoDocumento='+rifTipoDocumento+'&rifNumDocumento='+rifNumDocumento+'&rifTelefono='+rifTelefono+'&rifCorreo='+rifCorreo+'&rifNumbers='+rifNumbers+'&rifPago='+rifPago+'&rifTicketElectronico='+rifTicketElectronico;
         xmlhttp.open("POST", url, true);
         xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -91,7 +93,9 @@ function process(e){
                     alert(data.mensaje);
                     if(data.error == 'NO'){
                         showNumbers();
-                        printTickets(params);
+                        if(rifTicketElectronico == 'S'){
+                            printTickets(params);
+                        }
                         document.getElementById("formUser").reset();
                     }
                     msg=false;

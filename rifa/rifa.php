@@ -78,6 +78,32 @@
                         <div class="input-group">
                             <input class="input--style-1" type="email" placeholder="Correo" id="rifCorreo" name="rifCorreo">
                         </div>
+                        <div class="row row-space">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <label>Pagado</label>
+                                        <select id="rifPago" name="rifPago">
+                                            <option value="S">Si</option>
+                                            <option value="N">No</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <label>Ticket Electrónico</label>
+                                        <select id="rifTicketElectronico" name="rifTicketElectronico">
+                                            <option value="S">Si</option>
+                                            <option value="N">No</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="input-group">
                             <div style="margin: inherit;">
                                 <label>Números a escoger:</label>
