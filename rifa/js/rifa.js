@@ -37,6 +37,10 @@ function showNumbers(){
     }
 }
 
+function printTickets(params){
+    var win = window.open('pdf-create/create-ticket.php?'+params, '_blank');
+}
+
 function process(e){
     var rifNombre = document.getElementById("rifNombre").value;
     var rifApellido = document.getElementById("rifApellido").value;
@@ -74,11 +78,12 @@ function process(e){
         var xmlhttp = new XMLHttpRequest();
         var url = "../responses/rifa/responseShowNumbers.php";
         var msg=true;
+        var params = 'accion=procesarNumeros&rifNombre='+rifNombre+'&rifApellido='+rifApellido+'&rifTipoDocumento='+rifTipoDocumento+'&rifNumDocumento='+rifNumDocumento+'&rifTelefono='+rifTelefono+'&rifCorreo='+rifCorreo+'&rifNumbers='+rifNumbers;
         xmlhttp.open("POST", url, true);
         xmlhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xmlhttp.overrideMimeType("application/json");
-        xmlhttp.send('accion=procesarNumeros&rifNombre='+rifNombre+'&rifApellido='+rifApellido+'&rifTipoDocumento='+rifTipoDocumento+'&rifNumDocumento='+rifNumDocumento+'&rifTelefono='+rifTelefono+'&rifCorreo='+rifCorreo+'&rifNumbers='+rifNumbers);
+        xmlhttp.send(params);
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.status == 200) {
                 if((xmlhttp.responseText).length>0 && msg){
@@ -86,6 +91,7 @@ function process(e){
                     alert(data.mensaje);
                     if(data.error == 'NO'){
                         showNumbers();
+                        printTickets(params);
                         document.getElementById("formUser").reset();
                     }
                     msg=false;

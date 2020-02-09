@@ -1,8 +1,5 @@
 <?php
-//Clase para el registro de usuarios
-
-require('../../rifa/pdf-create/printTicket.php');
-
+//Clase para el registro de rifas
 class RifaController {
 
 	public $error = "";
@@ -88,15 +85,12 @@ class RifaController {
         
         
         //Se commitea y se cierran las conexiones si to tá bien
-        //$mbd->commit();
+        $mbd->commit();
         $mbd = null;
         $exist = null;
-
-        $this->createTicket($data);
         
         return true;
     }
-
 
 
 	/**
@@ -185,13 +179,6 @@ class RifaController {
         }
         
         return $sth;
-    }
-
-
-    private function createTicket($data){
-        $print = new printTickets();
-        $rifNumbers = explode(',',$data['rifNumbers']);
-        $print->create($rifNumbers,$data['rifNombre'],$data['rifApellido'],$data['rifTipoDocumento'],$data['rifNumDocumento']);    
     }
   
   

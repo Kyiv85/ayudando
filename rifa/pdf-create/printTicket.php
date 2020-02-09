@@ -28,13 +28,25 @@ class printTickets {
             if($j>=2){
                 $j=1;
                 $up=5;
-                if($k != (count($number)-1)){
+                if($k != (count($numbers)-1)){
                     $pdf->AddPage();
                 }
             }
         }
-        $filename='tickets/ticket_'.strtoupper($nombre).'_'.strtoupper($apellido).'_'.$dni.'.pdf';
+        $filename='tickets/ticket_'.strtoupper($nombre).'_'.strtoupper($apellido).'_'.$numDoc.'.pdf';
         $pdf->Output($filename,'F');
+        $this->display($filename);
+    }
+
+
+    private function display($file){
+        $filePath=$file;
+        $filename=basename($file);
+        header('Content-type:application/pdf');
+        header('Content-disposition: inline; filename="'.$filename.'"');
+        header('content-Transfer-Encoding:binary');
+        header('Accept-Ranges:bytes');
+        @ readfile($filePath);
     }
 
 }
