@@ -1,6 +1,8 @@
 <?php
 //Clase para el registro de usuarios
 
+require('../../rifa/pdf-create/printTicket.php');
+
 class RifaController {
 
 	public $error = "";
@@ -86,9 +88,11 @@ class RifaController {
         
         
         //Se commitea y se cierran las conexiones si to tá bien
-        $mbd->commit();
+        //$mbd->commit();
         $mbd = null;
         $exist = null;
+
+        $this->createTicket($data);
         
         return true;
     }
@@ -174,7 +178,7 @@ class RifaController {
                 $sth = $mbd->query($sql);
             } catch (PDOException $e) {
                 $sth = [];
-                error_log("Error al realizar el insert en rifNumerosUsuarios: " . $e->getMessage());
+                die("Error al realizar el insert en rifNumerosUsuarios: " . $e->getMessage());
                 $this->error = "Hubo un error al guardar la información del usuario, por favor contacta con el administrador";
                 return false;
             }
@@ -182,7 +186,13 @@ class RifaController {
         
         return $sth;
     }
-    
+
+
+    private function createTicket($data){
+        $print = new printTickets();
+        $rifNumbers = explode(',',$data['rifNumbers']);
+        $print->create($rifNumbers,$data['rifNombre'],$data['rifApellido'],$data['rifTipoDocumento'],$data['rifNumDocumento']);    
+    }
   
   
     private function connect()
@@ -191,7 +201,7 @@ class RifaController {
             $host = "localhost";
             $dbname = "ayudanos";
             $dbuser = "phpmyadmin";
-            $dbpass = "Paola1611";
+            $dbpass = "Paola1611.-.-";
             $charset= "SET NAMES utf8";
             $link = new PDO('mysql:host=' . $host . '; dbname=' . $dbname, $dbuser, $dbpass, array(PDO::MYSQL_ATTR_INIT_COMMAND => $charset));
             

@@ -2,19 +2,14 @@
 
 require('fpdf/fpdf.php');
 
-/*class printTickets {
+class printTickets {
 
-    public function create($number){*/
+    public function create($numbers,$nombre,$apellido,$tipoDoc,$numDoc){
         $pdf=new FPDF();
         $pdf->AddPage();
         $up=5;
         $j=1;
-        $number=array(12,13,14,15,16,17,19,20);
-        $nombre="Daniel";
-        $apellido="Delgado";
-        $tipoDoc="dni";
-        $numDoc="95721302";
-        foreach($number as $k => $n){
+        foreach($numbers as $k => $n){
             $pdf->Image('ticket.jpeg',5,$up,180,120,'JPG');
             $pdf->SetFont('Arial','',15);
             $pdf->Ln(50);
@@ -38,7 +33,8 @@ require('fpdf/fpdf.php');
                 }
             }
         }
-        $pdf->Output();
-  //  }
+        $filename='tickets/ticket_'.strtoupper($nombre).'_'.strtoupper($apellido).'_'.$dni.'.pdf';
+        $pdf->Output($filename,'F');
+    }
 
-//}
+}
