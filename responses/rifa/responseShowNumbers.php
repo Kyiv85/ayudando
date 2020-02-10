@@ -12,8 +12,14 @@ if (isset($_POST["accion"]) && ($_POST["accion"] == "validateNumbers")){
         $text = '';
         $selectedNumbers = [];
         $totalNumbers = [];
+        $reservedNumbers = [];
         foreach ($total as $t){
-            array_push($selectedNumbers, $t['rifNumero']);
+            if($t['rifPago'] == 'S'){
+                array_push($selectedNumbers, $t['rifNumero']);
+            }
+            else{
+                array_push($reservedNumbers, $t['rifNumero']);
+            }
         }
         for($i=0;$i<1000;$i++){
             array_push($totalNumbers, $i);
@@ -23,14 +29,27 @@ if (isset($_POST["accion"]) && ($_POST["accion"] == "validateNumbers")){
                           <div class="input-group">
                               <div class="form-check">';
             $existe = false;
+            $reservado = false;
             foreach ($selectedNumbers as $s){
                 if($t == $s){
                     $existe = true;
                 }
             }
+            foreach ($reservedNumbers as $r){
+                if($t == $r){
+                    $existe = false;
+                    $reservado = true;
+                }
+            }
             if($existe){
                 $text .= '<input class="form-check-input" type="checkbox" value="'.$t.'" id="rifNumero_'.$t.'" disabled>
                           <label class="form-check-label" for="defaultCheck2" style="color:red;">
+                            '.str_pad(strval($t), 3, "0", STR_PAD_LEFT).'
+                          </label>';
+            }
+            else if($reservado){
+                $text .= '<input class="form-check-input" type="checkbox" value="'.$t.'" id="rifNumero_'.$t.'" disabled>
+                          <label class="form-check-label" for="defaultCheck2" style="color:green;">
                             '.str_pad(strval($t), 3, "0", STR_PAD_LEFT).'
                           </label>';
             }
